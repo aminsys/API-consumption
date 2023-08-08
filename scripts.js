@@ -25,10 +25,6 @@ function load() {
             }
         }
     });
-
-    fetch("https://fdh-api.fifa.com/v1/stats/season/285026/team/1884881.json")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
 }
 
 
@@ -77,4 +73,24 @@ async function getData(){
     
     animeQuote.innerHTML = "<h2>"+quote.anime+"</h2>" + "<h4>"+quote.character+"</h4>" + quote.quote;
     elChart.render();
+}
+
+    // ===================================================== //
+    // Another way to consume REST API with JQuery - Statistics from Fifa API.
+
+function getStatsSwedenFifa2023(){
+    var url = "https://fdh-api.fifa.com/v1/stats/season/285026/team/1882883.json"; // National team of Sweden
+    $("#soccerStats").empty();
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: 'json',
+        cache: false,
+        success: function(data){
+            for(i = 0; i < data.length; i++){
+                $("#soccerStats").append("<div class=\"card p-2 m-2\"><div class=\"card-body\"><h5 class=\"card-title\">" + data[i][0].replace(/([A-Z])/g, ' $1').trim() + "</h5>" + "<span class=\"player-stats-card_number\">" + data[i][1] + "</span>" + "</div></div>");
+                console.log(data[i][0] + ": " + data[i][1]);
+            }
+        }
+      });
 }

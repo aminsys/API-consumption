@@ -4,6 +4,7 @@
 <head>
     <title>Anime citat och El priser i Malmö</title>
     <script src="scripts.js" type="text/Javascript"></script>
+    <link rel="stylesheet" href="style.css"/>
 
     <!-- For plotting graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -12,15 +13,18 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body onload="load()">
     <div class="row">
-        <div class="col m-2 p-2">
+        <div class="col m-4 p-2">
             <div id="quote">
             </div>
         </div> 
-        <div class="col m-2 p-2">
+        <div class="col m-4 p-2">
             <button class="btn btn-success btn-lg" onclick="getData()">Hämta random Anime citat och dagens Elpriser i Malmö</button>
         </div>     
     </div>
@@ -29,6 +33,18 @@
         <div class="row text-center">
             <div class="col-8 p-2">
                 <canvas id="elChart"></canvas>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2>Statistik för landslaget Sverige i dam VM 2023</h2>
+                <button class="btn btn-primary btn-lg p-2" onclick="getStatsSwedenFifa2023()">Hämta statistik för Svergie från Dam VM 2023</button>
+                <img decoding="async" loading="lazy" height="auto" width="10%" src="https://api.fifa.com/api/v3/picture/flags-sq-4/SWE">
+                <div id="soccerStats" class="stats-card_numberContainer">
+                    <!-- Populated via javascript -->
+                </div>
             </div>
 
             <div class="col p-2">
