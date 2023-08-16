@@ -61,7 +61,7 @@ async function getData(){
     // ===================================================== //
     // Another way to consume REST API - Anime quotes - CORS not allowed
 
-    var animeQuote = document.getElementById("quote");
+    // var animeQuote = document.getElementById("quote");
 
     /*try {
         var response = await fetch("https://animechan.xyz/api/random");  
@@ -79,6 +79,7 @@ async function getData(){
     // Another way to consume REST API with JQuery - Statistics from Fifa API.
 
 function getStatsSwedenFifa2023(){
+    // FIFA Women’s World Cup Australia & New Zealand 2023™
     var url = "https://fdh-api.fifa.com/v1/stats/season/285026/team/1882883.json"; // National team of Sweden
     $("#soccerStats").empty();
     $.ajax({
