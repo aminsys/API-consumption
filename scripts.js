@@ -59,11 +59,11 @@ async function getData(){
     req.send();
 
     // ===================================================== //
-    // Another way to consume REST API - Anime quotes
+    // Another way to consume REST API - Anime quotes - CORS not allowed
 
     var animeQuote = document.getElementById("quote");
 
-    try {
+    /*try {
         var response = await fetch("https://animechan.xyz/api/random");  
         var quote = await response.json();    
     }
@@ -71,7 +71,7 @@ async function getData(){
         console.log("Somethig went wrong...");
     }
     
-    animeQuote.innerHTML = "<h2>"+quote.anime+"</h2>" + "<h4>"+quote.character+"</h4>" + quote.quote;
+    animeQuote.innerHTML = "<h2>"+quote.anime+"</h2>" + "<h4>"+quote.character+"</h4>" + quote.quote;*/
     elChart.render();
 }
 
