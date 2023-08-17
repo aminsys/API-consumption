@@ -34,23 +34,29 @@
                     <a class="nav-link" href="El-Prices.html">El priser</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="Statistics-WWC.html">Stats - FIFA Women’s World Cup Australia & New Zealand 2023™</a>
+                    <a class="nav-link" href="Statistics-WWC.html">Stats - FIFA Women’s World Cup Australia & New
+                        Zealand 2023™</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row text-center">
-            <div class="p-2">
-                <h2>Statistik för ett slumpmässigt lag</h2>
-                <button class="btn btn-primary btn-lg p-2" onclick="getStatsSwedenFifa2023()">Klicka för att hämta statistik för ett slumpmässigt lag</button>
-                <img class="p-2" id="flag" decoding="async" loading="lazy" height="auto" width="20%"
-                    src="" />
-                <div id="soccerStats" class="stats-card_numberContainer">
-                    <!-- Populated via javascript -->
-                </div>
-            </div>
+    <div class="row p-2 m-2">
+        <h2>Statistik för ett slumpmässigt lag från Dam VM 2023</h2>
+        <button class="btn btn-primary btn-lg p-2 m-3" onclick="getStatsSwedenFifa2023()">Klicka för att hämta statistik
+            för ett slumpmässigt lag</button>
+        <div class="col">
+        </div>
+
+        <div class="col" align="center">
+            <img class="m-2" id="flag" decoding="async" loading="lazy" height="auto" width="40%" src="" />
+        </div>
+
+        <div class="col">            
+        </div>
+        
+        <div id="DamVMStats" class="stats-card_numberContainer">
+            <!-- Populated via javascript -->
         </div>
     </div>
 

@@ -1,4 +1,5 @@
-// Notice that APIs can have CORS on, and those requests will not be accepted if the server doesn't allow for CORS 
+// Notice that APIs can have CORS on, and those requests will not be 
+// accepted if the server doesn't allow for CORS 
 // (Cross-Origin Resource Sharing).
 
 var elChart = null;
@@ -62,7 +63,6 @@ function load() {
     });
 }
 
-
 async function getData() {
     var req = new XMLHttpRequest();
     var date = new Date();
@@ -94,42 +94,27 @@ async function getData() {
     req.send();
     elChart.render();
 
-    // ===================================================== //
-    // Another way to consume REST API - Anime quotes - CORS not allowed
-
-    // var animeQuote = document.getElementById("quote");
-
-    /*try {
-        var response = await fetch("https://animechan.xyz/api/random");  
-        var quote = await response.json();    
-    }
-    catch(e){
-        console.log("Somethig went wrong...");
-    }
-    
-    animeQuote.innerHTML = "<h2>"+quote.anime+"</h2>" + "<h4>"+quote.character+"</h4>" + quote.quote;*/
 }
 
 // ===================================================== //
 
-function chooseRandomCountry(){
+function chooseRandomCountry() {
     let length = Object.keys(FifaCountries2023).length;
     let keyArray = Object.keys(FifaCountries2023);
-    console.log("Length: " + length);
     return keyArray[Math.floor(Math.random() * length)];
 }
 
 // Another way to consume REST API with JQuery - Statistics from FIFA API.
-
 function getStatsSwedenFifa2023(country) {
     // FIFA Women’s World Cup Australia & New Zealand 2023™
     var randomCountry = chooseRandomCountry();
-    console.log("The random country is: " + randomCountry);
-    var url = "https://fdh-api.fifa.com/v1/stats/season/285026/team/"+ FifaCountries2023[randomCountry] + ".json";
-    $("#soccerStats").empty();
-    console.log("Get attribute of img ", $("#flag").attr("src"));
-    $("#flag").attr("src","https://api.fifa.com/api/v3/picture/flags-sq-4/" + randomCountry);
-    console.log("Get attribute of img after: ", $("#flag").attr("src"));
+    
+    var url = "https://fdh-api.fifa.com/v1/stats/season/285026/team/" + FifaCountries2023[randomCountry] + ".json";
+
+    $("#DamVMStats").empty();
+
+    $("#flag").attr("src", "https://api.fifa.com/api/v3/picture/flags-sq-4/" + randomCountry);
+
     $.ajax({
         type: "GET",
         url: url,
@@ -137,8 +122,7 @@ function getStatsSwedenFifa2023(country) {
         cache: false,
         success: function (data) {
             for (i = 0; i < data.length; i++) {
-                $("#soccerStats").append("<div class=\"card p-2 m-2\"><div class=\"card-body\"><h5 class=\"card-title\">" + data[i][0].replace(/([A-Z])/g, ' $1').trim() + "</h5>" + "<span class=\"player-stats-card_number\">" + data[i][1] + "</span>" + "</div></div>");
-                console.log(data[i][0] + ": " + data[i][1]);
+                $("#DamVMStats").append("<div class=\"card p-2 m-2\"><div class=\"card-body\"><h5 class=\"card-title\">" + data[i][0].replace(/([A-Z])/g, ' $1').trim() + "</h5>" + "<span class=\"player-stats-card_number\">" + data[i][1] + "</span>" + "</div></div>");
             }
         }
     });
