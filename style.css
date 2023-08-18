@@ -26,6 +26,23 @@ body {
 
 img {
     border: 2px solid;
+    transition: width 4s, height 2s;
+}
+
+img:hover {
+    transition: width 4s, height 2s;
+    width: 80%;
+    height: 90%;
+}
+
+#elChart {
+    transition: width 4s, height 2s;
+}
+
+#elChart:hover {
+    width: 50%;
+    height: 50%;
+    transition: width 4s, height 2s;
 }
 
 .startpage {
