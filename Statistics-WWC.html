@@ -41,10 +41,18 @@
         </div>
     </nav>
 
+    <h2>Statistik för ett slumpmässigt lag från Dam VM 2023</h2>
     <div class="row p-2 m-2">
-        <h2>Statistik för ett slumpmässigt lag från Dam VM 2023</h2>
-        <button class="btn btn-primary btn-lg p-2 m-3" onclick="getStatsSwedenFifa2023()">Klicka för att hämta statistik
-            för ett slumpmässigt lag</button>
+        <div class="col" align="center">
+            <button class="btn btn-primary btn-lg p-2 m-3" onclick="getStatsSwedenFifa2023()">Klicka för att hämta statistik
+                för ett slumpmässigt lag</button>    
+        </div>
+        <div class="col" align="center">
+            <button class="btn btn-primary btn-lg p-2 m-3" onclick="saveJSONDataToFile()">Hämta JSON filen för statistiken</button>
+        </div>
+    </div>
+
+    <div class="row p-2 m-2">
         <div class="col">
         </div>
 
@@ -52,9 +60,9 @@
             <img class="m-2" id="flag" decoding="async" loading="lazy" height="auto" width="40%" src="" />
         </div>
 
-        <div class="col">            
+        <div class="col">
         </div>
-        
+
         <div id="DamVMStats" class="stats-card_numberContainer">
             <!-- Populated via javascript -->
         </div>

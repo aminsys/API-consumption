@@ -6,6 +6,8 @@ var elChart = null;
 var xValues = [];
 var yValues = [];
 
+var downloadableData = null;
+
 var FifaCountries2023 = {
     "BRA": 1882881,
     "SWE": 1882883,
@@ -124,6 +126,16 @@ function getStatsSwedenFifa2023(country) {
             for (i = 0; i < data.length; i++) {
                 $("#DamVMStats").append("<div class=\"card p-2 m-2\"><div class=\"card-body\"><h5 class=\"card-title\">" + data[i][0].replace(/([A-Z])/g, ' $1').trim() + "</h5>" + "<span class=\"player-stats-card_number\">" + data[i][1] + "</span>" + "</div></div>");
             }
+            downloadableData = data;
         }
     });
+}
+
+
+function saveJSONDataToFile(content = downloadableData, fileName = "statistics_WWC2023.json", contentType = "text/json") {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
 }
